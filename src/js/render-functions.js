@@ -58,3 +58,11 @@ export function showLoader() {
 export function hideLoader() {
   loader.classList.remove('is-visible');
 }
+
+export function showLoadMoreButton() {
+  loadMoreBtn.classList.add('is-visible');
+}
+
+export function hideLoadMoreButton() {
+  loadMoreBtn.classList.remove('is-visible');
+}

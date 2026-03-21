@@ -99,3 +99,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.btn-load-more {
+  display: none;
+}
+
+.btn-load-more.is-visible {
+  display: block;
+}
