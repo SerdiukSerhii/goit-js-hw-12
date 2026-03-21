@@ -7,11 +7,6 @@
   border-radius: 50%;
   box-sizing: border-box;
 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   animation: rotation 1s linear infinite;
 
   opacity: 0;
@@ -24,9 +19,9 @@
 
 @keyframes rotation {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

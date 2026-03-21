@@ -11,14 +11,16 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const form = document.querySelector('.js-form');
-const loadMoreBtn = document.querySelector('.js-load-more');
+const refs = {
+  formElem: document.querySelector('.js-form'),
+  loadMoreBtn: document.querySelector('.js-load-more'),
+};
 
 let page = 1;
 let currentQuery = '';
 
 // ============= event ==========================
-form.addEventListener('submit', async e => {
+refs.formElem.addEventListener('submit', async e => {
   e.preventDefault();
 
   const formData = new FormData(e.currentTarget);
@@ -65,18 +67,17 @@ form.addEventListener('submit', async e => {
     hideLoader();
   }
 
-  form.reset();
+  refs.formElem.reset();
 });
 
 // ============= load more btn ==========================
 
-loadMoreBtn.addEventListener('click', async () => {
+refs.loadMoreBtn.addEventListener('click', async () => {
   page += 1;
   showLoader();
 
   try {
     const data = await getImagesByQuery(currentQuery, page);
-
     createGallery(data.hits);
 
     if (data.hits.length === 0) {

@@ -3,7 +3,8 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryContainer = document.querySelector('.js-gallery');
-const loader = document.querySelector('.loader');
+const loadMoreBtn = document.querySelector('.js-load-more');
+const loaderElem = document.querySelector('.loader');
 
 const lightbox = new SimpleLightbox('.js-gallery a', {
   captions: true,
@@ -52,11 +53,11 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.add('is-visible');
+  loaderElem.classList.add('is-visible');
 }
 
 export function hideLoader() {
-  loader.classList.remove('is-visible');
+  loaderElem.classList.remove('is-visible');
 }
 
 export function showLoadMoreButton() {
