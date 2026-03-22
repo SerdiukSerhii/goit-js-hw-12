@@ -90,21 +90,13 @@ refs.formElem.addEventListener('submit', async e => {
 
 refs.loadMoreBtn.addEventListener('click', async () => {
   page += 1;
+  hideLoadMoreButton();
   showLoader();
 
   try {
     const data = await getImagesByQuery(currentQuery, page);
 
     createGallery(data.hits);
-
-    if (!data.hits.length || page >= totalPages) {
-      hideLoadMoreButton();
-      iziToast.info({
-        message: "We're sorry, but you've reached the end of search results.",
-        position: 'topRight',
-      });
-      return;
-    }
 
     // ================= scroll========================
     const elem = document.querySelector('.gallery-item:last-child');
@@ -115,6 +107,16 @@ refs.loadMoreBtn.addEventListener('click', async () => {
         top: cardHeight * 2,
         behavior: 'smooth',
       });
+    }
+    // =====================================================
+
+    if (page >= totalPages) {
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+        position: 'topRight',
+      });
+    } else {
+      showLoadMoreButton();
     }
   } catch {
     iziToast.error({
