@@ -34,7 +34,7 @@ The project includes:
 
 ## Live Demo
 
-[GitHub Pages](https://serdiukserhii.github.io/goit-js-hw-12/)
+[Live Pages](https://serdiukserhii.github.io/goit-js-hw-12/)
 
 [GitHub](https://github.com/SerdiukSerhii/goit-js-hw-12)
 
